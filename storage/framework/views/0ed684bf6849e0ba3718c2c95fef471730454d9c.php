@@ -5,18 +5,18 @@
     <title>Dashboard</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
-    <script type="text/javascript" src="{{ URL::asset('js/jquery-3.2.1.min.js') }}"></script>
-    <script type="text/javascript" src="{{ URL::asset('js/admin_dasboard.js') }}"></script>
-    <link rel="stylesheet" type="text/css" media="screen" href="{{ URL::asset('css/admin_dasboard.css') }}" />
-    <script type="text/javascript" src="{{ URL::asset('js/jquery-3.2.1.min.js') }}"></script>
+    <script type="text/javascript" src="<?php echo e(URL::asset('js/jquery-3.2.1.min.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(URL::asset('js/admin_dasboard.js')); ?>"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="<?php echo e(URL::asset('css/admin_dasboard.css')); ?>" />
+    <script type="text/javascript" src="<?php echo e(URL::asset('js/jquery-3.2.1.min.js')); ?>"></script>
     <?php include($_SERVER['DOCUMENT_ROOT'].'/link/link.php'); ?>
 
-    <script type="text/javascript" src="{{ URL::asset('datatables/jquery-3.3.1.js') }}"></script>
-    <script type="text/javascript" src="{{ URL::asset('datatables/dataTables.bootstrap4.min.js') }}"></script>
-    <script type="text/javascript" src="{{ URL::asset('datatables/jquery.dataTables.min.js') }}"></script>
+    <script type="text/javascript" src="<?php echo e(URL::asset('datatables/jquery-3.3.1.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(URL::asset('datatables/dataTables.bootstrap4.min.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(URL::asset('datatables/jquery.dataTables.min.js')); ?>"></script>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="{{ URL::asset('datatables/jquery.dataTables.min.css') }}" />
-    <link rel="stylesheet" type="text/css" media="screen" href="{{ URL::asset('datatables/dataTables.bootstrap4.min.css') }}" />
+    <link rel="stylesheet" type="text/css" media="screen" href="<?php echo e(URL::asset('datatables/jquery.dataTables.min.css')); ?>" />
+    <link rel="stylesheet" type="text/css" media="screen" href="<?php echo e(URL::asset('datatables/dataTables.bootstrap4.min.css')); ?>" />
 
 
   </head>
@@ -138,17 +138,18 @@
               </a>
               <div class="dropdown-menu dropdown-menu-right dropdown-default"
                 aria-labelledby="navbarDropdownMenuLink-333">
-                <a style="color:#3aafa9;" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" class="dropdown-item" > 
+                <a style="color:#3aafa9;" href="<?php echo e(route('logout')); ?>" onclick="event.preventDefault();document.getElementById('logout-form').submit();" class="dropdown-item" > 
                   <i class="fas fa-sign-out-alt"></i>  Log Out
                 </a>
-                <!-- <a class="dropdown-item" href="{{ route('logout') }}"
+                <!-- <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
                     onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
+                        <?php echo e(__('Logout')); ?>
+
                     </a> -->
 
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
+                    <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
+                        <?php echo csrf_field(); ?>
                     </form>
               </div>
             </li>
@@ -158,7 +159,7 @@
       <!--/.Navbar -->
       <!-- ////////////////////////////////////  CONTENT  //////////////////////////////////////////// -->
     <div>
-        @yield('content')
+        <?php echo $__env->yieldContent('content'); ?>
     </div>
      
       </section>
@@ -166,15 +167,15 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.js"></script>
       
-      <script type="text/javascript" src="{{ URL::asset('datatables/jquery-3.3.1.js') }}"></script>
-      <script type="text/javascript" src="{{ URL::asset('datatables/dataTables.bootstrap4.min.js') }}"></script>
-      <script type="text/javascript" src="{{ URL::asset('datatables/jquery.dataTables.min.js') }}"></script>
+      <script type="text/javascript" src="<?php echo e(URL::asset('datatables/jquery-3.3.1.js')); ?>"></script>
+      <script type="text/javascript" src="<?php echo e(URL::asset('datatables/dataTables.bootstrap4.min.js')); ?>"></script>
+      <script type="text/javascript" src="<?php echo e(URL::asset('datatables/jquery.dataTables.min.js')); ?>"></script>
 
-      <link rel="stylesheet" type="text/css" media="screen" href="{{ URL::asset('datatables/jquery.dataTables.min.css') }}" />
-      <link rel="stylesheet" type="text/css" media="screen" href="{{ URL::asset('datatables/dataTables.bootstrap4.min.css') }}" />
+      <link rel="stylesheet" type="text/css" media="screen" href="<?php echo e(URL::asset('datatables/jquery.dataTables.min.css')); ?>" />
+      <link rel="stylesheet" type="text/css" media="screen" href="<?php echo e(URL::asset('datatables/dataTables.bootstrap4.min.css')); ?>" />
 
       </body>
     </html>
 
 </body>
-</html>
+</html><?php /**PATH C:\xampp\htdocs\laravel02\resources\views/layouts/admin_layout.blade.php ENDPATH**/ ?>

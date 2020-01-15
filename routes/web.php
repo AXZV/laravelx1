@@ -34,3 +34,7 @@ Route::POST('/admin_dasboard/proses_edit_captionslider', 'Admin\AdminController@
 Route::POST('/admin_dasboard/proses_edit_imgslider', 'Admin\AdminController@updatesliderimage');
 
 
+Route::get('/admin_dasboard/crud', 'crud\crudController@crud')->middleware('verified')->middleware('admin');
+Route::POST('/admin_dasboard/crud_add', 'crud\crudController@crud_add');
+Route::POST('/admin_dasboard/crud_del/{id}', 'crud\crudController@crud_del');
+Route::POST('/admin_dasboard/crud_edit', 'crud\crudController@crud_edit');
